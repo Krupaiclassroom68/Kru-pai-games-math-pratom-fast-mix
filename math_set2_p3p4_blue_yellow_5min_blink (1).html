@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kru Pai Classroom – ชุดที่ 2 ป.3–4 (บวก ลบ คูณ หาร) 30 ข้อ / 5 นาที</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#f5fbff; --bg2:#fffce6; /* blue-yellow */
+  --ink:#0b2540; --muted:#6b7a90; --line:#d7eaff;
+  --pri:#42a5f5; --pri2:#1e88e5; /* blue */
+  --acc:#ffd54d; /* yellow accent */
+  --ok:#18b77a; --bad:#ff5b7d;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Fredoka,sans-serif;background:linear-gradient(180deg,var(--bg1),var(--bg2))}
+.hidden{display:none!important}
+.btn{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border:none;border-radius:16px;padding:14px 18px;font-weight:800;cursor:pointer;font-size:18px;box-shadow:0 8px 18px rgba(30,136,229,.20)}
+.btn.lg{font-size:20px;padding:16px 20px;border-radius:18px}
+.ghost{background:#fff;color:var(--pri2);border:2px solid var(--pri)}
+.card{width:min(820px,94vw);background:#fff;border:2px solid var(--line);border-radius:24px;box-shadow:0 16px 30px rgba(66,165,245,.18);padding:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:64px;height:64px;border-radius:20px;background:radial-gradient(circle at 30% 30%,#fff9c4,#ffd54d 60%,#ffca28);display:grid;place-items:center;color:#1e88e5;font-weight:900;font-size:22px;box-shadow:0 6px 16px rgba(255,213,77,.5)}
+.title{font-size:28px;font-weight:900;color:#1e88e5}
+.subtitle{color:var(--muted);font-size:14px}
+.ribbon{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#42a5f5,#81d4fa);color:#083b6d;border-radius:16px;padding:10px 14px;box-shadow:0 8px 18px rgba(66,165,245,.18)}
+.q{font-size:clamp(28px,6.6vw,52px);font-weight:900;text-align:center;background:#fff;border:2px dashed var(--line);border-radius:24px;box-shadow:0 12px 28px rgba(66,165,245,.10);padding:22px;position:relative}
+.q::after{content:"⭐"; position:absolute; right:16px; top:14px; font-size:22px; opacity:.25}
+.ans{min-width:220px;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;font-size:clamp(28px,6.2vw,46px);font-weight:900;border:3px dashed var(--line);border-radius:16px;background:#f8fbff;color:#2d4e6d}
+.ans.good{border:3px solid var(--ok);background:#eafff6;color:#095e3f;box-shadow:0 0 0 4px rgba(24,183,122,.12) inset}
+.ans.bad{border:3px solid var(--bad);background:#fff0f4;color:#8a1230;box-shadow:0 0 0 4px rgba(255,91,125,.10) inset}
+.tip{font-size:14px;color:var(--muted);margin-top:6px}
+.stars{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;min-height:32px;margin-top:10px}
+.stk{font-size:28px;display:inline-block;transform:translateY(0);animation:pop .22s ease-out}
+@keyframes pop{0%{transform:scale(.6) translateY(6px);opacity:.0}100%{transform:scale(1) translateY(0);opacity:1}}
+.keypad{position:sticky;bottom:0;background:#fff;border-top:2px solid var(--line);padding:12px}
+.keys{width:min(820px,94vw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.key{padding:16px 0;text-align:center;font-size:24px;font-weight:900;border-radius:16px;background:#e3f2fd;color:#0e2c47;border:2px solid #bbdefb;cursor:pointer;box-shadow:0 4px 10px rgba(66,165,245,.10)}
+.key.wide{grid-column:span 3}
+.footer-note{font-size:12px;color:var(--muted);margin-top:8px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fffbe6;border:2px dashed #ffe082;color:#8a6d00;border-radius:14px;padding:6px 12px;font-weight:800}
+
+.urgent{color:#e53935; animation:blink 0.8s steps(2,end) infinite}
+@keyframes blink{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+
+</style>
+</head>
+<body>
+
+<section id="start">
+  <div class="card">
+    <div class="brand"><div class="logo">KP</div><div><div class="title">Kru Pai Classroom – ชุดที่ 2</div><div class="subtitle">บวก ลบ คูณ หาร สำหรับ ป.3–ป.4 (30 ข้อ / 5 นาที)</div></div></div>
+    <div class="ribbon">💙💛 โหมดน่ารัก สีฟ้า–เหลือง พร้อมฝึกความไวคิดเลข!</div>
+    <p><b>กติกา:</b> มีเวลา <b>5 นาที</b> ทำให้ครบ 30 ข้อ (แก้ตัวได้ 1 ครั้งต่อข้อ)</p>
+    <p class="badge">ระบบตรวจแบบ “ค่าเท่ากัน” → <b>2</b>, <b>2.0</b>, <b>2.00</b> = ถูกเหมือนกัน ✅</p>
+    <label>ชื่อนักเรียน:</label>
+    <input id="player" type="text" placeholder="เช่น น้องพาย" style="width:100%;padding:14px;font-size:18px;margin:10px 0;border:2px solid var(--line);border-radius:14px"/>
+    <button id="btnStart" class="btn lg">เริ่มเล่นเลย 💫</button>
+    <div class="footer-note">© Kru Pai Classroom</div>
+  </div>
+</section>
+
+<section id="game" class="hidden">
+  <div class="card">
+    <div style="font-size:20px;font-weight:800;margin-bottom:10px">ชื่อ: <span id="who">—</span> | ข้อที่ <span id="idx">1</span>/30 | คะแนน <span id="starsCount">0</span></div>
+    <div class="q"><span id="expr">—</span> = <span id="ans" class="ans">?</span></div>
+    <div style="margin-top:8px">ผิดได้อีก: <b id="retryLeft">1</b> ครั้ง | เวลา: <span id="timeLeft" aria-live="polite">5:00</span></div>
+    <div id="stars" class="stars"></div>
+    <div id="formatTip" class="tip hidden">ตอบได้ทั้ง <b>จำนวนเต็ม</b> และ <b>ทศนิยม .0</b> เช่น 2 หรือ 2.0 ✅</div>
+  </div>
+  <div class="keypad"><div class="keys" id="keys"></div></div>
+</section>
+
+<section id="done" class="hidden">
+  <div class="card" style="text-align:center">
+    <h2>สรุปผล</h2>
+    <p><b id="sumName">—</b> ทำคะแนนได้ <b id="sumStars">0</b></p>
+    <p>ทำไปทั้งหมด <b id="sumIdx">0</b> / 30 ข้อ</p>
+    <div id="finalStars" class="stars"></div>
+    <button id="btnPlayAgain" class="btn lg">เล่นอีกครั้ง</button>
+    <button id="btnToHome" class="btn lg ghost">กลับหน้าแรก</button>
+  </div>
+</section>
+
+<script>
+const $=s=>document.querySelector(s);
+const problems = [{"text": "350 + 200 + 20", "answer": "570"}, {"text": "145 × 2", "answer": "290"}, {"text": "99 + 199", "answer": "298"}, {"text": "500 − 125", "answer": "375"}, {"text": "(990 ÷ 3) + 111", "answer": "441"}, {"text": "240 + 120", "answer": "360"}, {"text": "320 − 180", "answer": "140"}, {"text": "75 × 4", "answer": "300"}, {"text": "84 ÷ 7", "answer": "12"}, {"text": "600 ÷ 5", "answer": "120"}, {"text": "45 × 6", "answer": "270"}, {"text": "700 − 350", "answer": "350"}, {"text": "250 + 250 + 50", "answer": "550"}, {"text": "33 + 77 + 90", "answer": "200"}, {"text": "900 ÷ 9", "answer": "100"}, {"text": "12 × 12", "answer": "144"}, {"text": "64 ÷ 8", "answer": "8"}, {"text": "128 + 72", "answer": "200"}, {"text": "500 ÷ 25", "answer": "20"}, {"text": "360 ÷ 6", "answer": "60"}, {"text": "48 × 3", "answer": "144"}, {"text": "120 + 180", "answer": "300"}, {"text": "450 − 275", "answer": "175"}, {"text": "400 − 125", "answer": "275"}, {"text": "140 × 3", "answer": "420"}, {"text": "81 ÷ 9", "answer": "9"}, {"text": "210 + 90", "answer": "300"}, {"text": "560 − 240", "answer": "320"}, {"text": "(600 ÷ 3) + 50", "answer": "250"}, {"text": "(400 ÷ 2) − 50", "answer": "150"}];
+const state = {name:"นักเรียน",limit:problems.length,timeLimit:300,idx:0,stars:0,input:"",timer:null,timeLeft:420,running:false,retry:1,shownFormatTip:false};
+
+function fmtTime(sec){const m=Math.floor(sec/60),s=sec%60;return `${m}:${String(s).padStart(2,"0")}`;}
+function setHUD(){ $("#who").textContent=state.name; $("#idx").textContent=state.idx+1; $("#starsCount").textContent=state.stars; $("#retryLeft").textContent=state.retry; $("#timeLeft").textContent=fmtTime(state.timeLeft); if(state.timeLeft<=30){ $("#timeLeft").classList.add('urgent'); } else { $("#timeLeft").classList.remove('urgent'); }}
+function showExpr(){ $("#expr").textContent=problems[state.idx].text; $("#ans").textContent=state.input||"?"; $("#ans").classList.remove("good","bad"); }
+
+// Emoji stickers
+function addSmile(){ const s=document.createElement("span"); s.className="stk"; s.textContent="😊"; $("#stars").appendChild(s); }
+function addAngry(){ const b=document.createElement("span"); b.className="stk"; b.textContent="😡"; $("#stars").appendChild(b); }
+function addScore(){ state.stars++; $("#starsCount").textContent=state.stars; }
+
+function numericEqual(a,b){ const x=parseFloat(a), y=parseFloat(b); if(Number.isNaN(x)||Number.isNaN(y)) return false; return Math.abs(x-y) < 1e-9; }
+
+function pushDigit(d){ if(!state.running)return; if(d==="." && state.input.includes(".")) return; state.input+=d; showExpr(); }
+function backspace(){ state.input=state.input.slice(0,-1); showExpr(); }
+
+function submit(){
+  if(!state.running||state.input==="")return;
+  const correct=problems[state.idx].answer;
+  if(numericEqual(state.input, correct)){
+    $("#ans").classList.add("good");
+    addScore(); addSmile();
+    setTimeout(next, 220);
+  }else{
+    $("#ans").classList.add("bad");
+    if(!state.shownFormatTip){
+      const x=parseFloat(state.input), y=parseFloat(correct);
+      if(!Number.isNaN(x) && !Number.isNaN(y) && Math.abs(x-y)<1e-9){
+        $("#formatTip").classList.remove("hidden"); state.shownFormatTip=true;
+      }
+    }
+    if(state.retry>0){ state.retry--; setHUD(); setTimeout(()=>{ state.input=""; showExpr(); }, 160); }
+    else{ addAngry(); setTimeout(next, 220); }
+  }
+}
+
+function next(){ if(state.idx>=state.limit-1){ finish(); return; } state.idx++; state.input=""; state.retry=1; setHUD(); showExpr(); }
+function startTimer(){ clearInterval(state.timer); state.timeLeft=state.timeLimit; state.timer=setInterval(()=>{ if(!state.running)return; state.timeLeft--; setHUD(); if(state.timeLeft<=0) finish(); }, 1000); }
+function start(){ state.name=$("#player").value||"นักเรียน"; state.idx=0; state.stars=0; state.input=""; state.retry=1; state.running=true; state.shownFormatTip=false; $("#formatTip").classList.add("hidden"); $("#stars").innerHTML=""; $("#timeLeft").classList.remove('urgent'); $("#start").classList.add("hidden"); $("#done").classList.add("hidden"); $("#game").classList.remove("hidden"); setHUD(); showExpr(); startTimer(); }
+function finish(){ if(!state.running)return; state.running=false; clearInterval(state.timer); $("#sumName").textContent=state.name; $("#sumStars").textContent=state.stars; $("#sumIdx").textContent=state.idx+1; const fin=$("#finalStars"); fin.innerHTML=""; for(let i=0;i<state.stars;i++){ const s=document.createElement("span"); s.className="stk"; s.textContent="😊"; fin.appendChild(s); } $("#game").classList.add("hidden"); $("#done").classList.remove("hidden"); }
+
+// Keypad
+(function(){const keys=["7","8","9","4","5","6","1","2","3","0",".","⌫","ส่ง"];const box=$("#keys");keys.forEach(k=>{const b=document.createElement("div");b.className="key"+(k==="ส่ง"?" wide":"");b.textContent=k;b.onclick=()=>{if(k==="⌫")backspace();else if(k==="ส่ง")submit();else pushDigit(k);};box.appendChild(b);});})();
+document.addEventListener("keydown",e=>{if($("#game").classList.contains("hidden"))return;if(/[0-9.]/.test(e.key))pushDigit(e.key);else if(e.key==="Backspace")backspace();else if(e.key==="Enter")submit();});
+
+// Buttons
+$("#btnStart").onclick=start; $("#btnPlayAgain").onclick=start; $("#btnToHome").onclick=()=>{$("#done").classList.add("hidden"); $("#start").classList.remove("hidden");};
+</script>
+</body>
+</html>
